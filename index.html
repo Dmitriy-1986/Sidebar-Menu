@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Sidebars</title>
+
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		body {
+			margin: 0;
+			background: #121212;
+		}
+
+		.sidebar button {
+			background: transparent;
+			border: 0;
+			padding: 0;
+			cursor: pointer;
+			color: white;
+			font-size: 40px;
+			text-align: center;
+			width: 74px;
+		}
+
+		.sidebar .sidebar-burger::after {
+			content: '+';
+		}
+
+		.sidebar {
+			position: absolute;
+			overflow-x: hidden;
+			top: 0;
+			left: 0;
+			width: 95px;
+			height: 100%;
+			background: #6d10db;
+			transition: width 0.4s;
+		}
+
+		body.open .sidebar {
+			width: 260px;
+		}
+
+		body.open .sidebar .sidebar-burger::after {
+			content: '-';
+		}
+
+		.sidebar .sidebar-inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 260px;
+		}
+
+		.sidebar .sidebar-header {
+			display: flex;
+			align-items: center;
+			height: 72px;
+			padding: 0 1.25rem 0 0;
+			background: rgba(0, 0, 0, 0.1);
+		}
+
+		.sidebar ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		.sidebar .sidebar-menu li {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.sidebar .sidebar-title {
+			margin-left: 30px;
+		}
+
+		.sidebar::-webkit-scrollbar {
+			width: 12px;
+		}
+
+		.sidebar::-webkit-scrollbar-track {
+			background: orange;
+		}
+
+		.sidebar::-webkit-scrollbar-thumb {
+			background-color: blue;
+			border-radius: 20px;
+			border: 3px solid orange;
+		}
+	</style>
+</head>
+<body>
+
+	<nav class="sidebar">
+		<div class="sidebar-inner">
+			<header class="sidebar-header">
+				<button id="btnSidebar" class="sidebar-burger"></button>
+				<span class="sidebar-title">Logotype</span>
+			</header>
+			<nav class="sidebar-menu">
+				<ul>
+					<li>
+						<button class="has-border">
+							#1
+						</button>
+						<span class="sidebar-title">Settings-1</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#2
+						</button>
+						<span class="sidebar-title">Settings-2</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#3
+						</button>
+						<span class="sidebar-title">Settings-3</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#4
+						</button>
+						<span class="sidebar-title">Settings-4</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#5
+						</button>
+						<span class="sidebar-title">Settings-5</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#6
+						</button>
+						<span class="sidebar-title">Settings-6</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#7
+						</button>
+						<span class="sidebar-title">Settings-7</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#8
+						</button>
+						<span class="sidebar-title">Settings-8</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#9
+						</button>
+						<span class="sidebar-title">Settings-9</span>
+					</li>
+					<li>
+						<button class="has-border">
+							#10
+						</button>
+						<span class="sidebar-title">Settings-10</span>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</nav>
+
+	<script type="text/javascript">
+		const btnSidebar = document.querySelector('#btnSidebar');
+		btnSidebar.addEventListener('click', () => {
+				document.body.classList.toggle('open');
+		});
+	</script>
+	
+</body>
+</html>
